@@ -6,12 +6,6 @@ The goals / steps of this project are the following:
 * Reflect on your work in a written report
 
 
-[//]: # (Image References)
-
-[image1]: ./examples/grayscale.jpg "Grayscale"
-
----
-
 ### Reflection
 
 ###1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
@@ -19,7 +13,7 @@ This project was completed in two parts. The first part is writing a pipeline an
 to draw stable lines on lanes. The pipeline is madeup of five steps. First of all an image is converted to grayscale image.
 Once, I have grayscale image, gaussian_blur is applied. The blurring will help to remove irregular spots and pixels. After this, I find the edges using canny edge detection. Now, I have edges but not all of those are important to me. Using polygon that covers the portion of image that interests to me i.e covering both lanes, I extracted that portion. Hough transform is run on that portion. After running hough, draw_lines function is used to draw lines on the image.
 
-In order to mark two lanes with dominant line, the function was modified. The first thing I did was calculated the slop of each lines so as to find which line is left lane and which one is right. I found average slopes and  average intercepts of left and right lanes. I also calculated running average of slopes and intercepts incase of video so as to make the lanes stable. Using, those slopes and intercepts I drew lines on image.
+In order to mark two lanes with dominant line, the function was modified. The first thing I did was calculated the slope of each lines so as to find which line is left lane and which one is right. I found average slopes and  average intercepts of left and right lanes. I also calculated running average of slopes and intercepts incase of video so as to make the lanes stable. Using, those slopes and intercepts I drew lines on image.
 
 
 ###2. Identify potential shortcomings with your current pipeline
